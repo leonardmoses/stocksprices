@@ -5,11 +5,11 @@ import stocks from "../data.json";
 const Stocks = (props) => {
   
     const stocksLinks = stocks.map(
-      (ticker) => {
-        const { name, symbol } = ticker;
+      (stock) => {
+        const { name, symbol } = stock;
   
         return (
-          <Link to={`/price/${symbol}`} >
+          <Link to={`/Stock/${symbol}`} >
             <h2>{name}</h2>
           </Link>
         );

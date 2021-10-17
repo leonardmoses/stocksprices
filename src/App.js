@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Nav from './components/Nav';
 import About from './pages/About';
 import Stocks from './pages/Dashboard';
+import StockPrice from './pages/Stock';
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
         </Route>
         <Route path="/dashboard">
           <Stocks/>
+        </Route>
+        <Route path="/stock/:symbol">
+          <StockPrice/>
         </Route>
         
       </Switch>
