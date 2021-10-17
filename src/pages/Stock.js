@@ -1,26 +1,19 @@
 import React from "react";
+import { useParams } from "react-router";
 import stocks from "../data.json";
 
 
 const StockPrice = (props) => {
+  // let { symbol } = useParams();
 
-  // Grabbing the Currency symbol from the URL Param
-//   const symbol = props.match.params.symbol;
-  // Using the other two variables to create our URL
+  //   const filteredstock = stocks.filter((stock) => {
+      
+  //     console.log(stock);
+  //   })
+    
+  const stock = props.stocks.filter(stocks => stocks.symbol === props.match.params.symbol)[0]
 
-
-    //state to hold the stock data
-    const [stock, setStock] = React.useState(stocks[0]);
-
-  //function to fetch coin data
-  // const getStock = async () => {
-  //   setStock();
-  // };
-
-  // useEffect to run getStock when component mounts
-  // React.useEffect(() => {
-  //   getStock();
-  // }, []);
+    // const [stock, setStock] = React.useState(null);
 
     // loaded function for when data is fetched
     const loaded = () => {
@@ -31,6 +24,9 @@ const StockPrice = (props) => {
                 </h1>
                 <h2>
                     Last price: {stock.lastPrice}
+                    
+                    
+
                 </h2>
             </div>
         )
